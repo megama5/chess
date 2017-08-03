@@ -1,0 +1,149 @@
+/*---------------------------------------
+import
+----------------------------------------*/
+@import url(reset.css);
+
+body{
+	padding-top: 20px;
+}
+/*----------------------------------------
+main
+*/
+
+.board{
+	width: 848px;
+	height: 848px;
+	margin:0 auto;
+	border: 2px solid black;
+	position: relative;
+}
+
+
+/*----------------------------------------------
+ top bottom text
+---------------------------------------------------*/
+.mark-top,
+.mark-bottom{
+	position: absolute;
+	width: 800px;
+	font-size: 0;
+	margin: 0 auto;
+	right: 0;
+	left: 0;
+}
+
+.mark-top{
+	top: 0;
+}
+
+.mark-bottom{
+	bottom: 0;
+}
+
+.mark-top li,
+.mark-bottom li{
+	display: inline-block;
+	width: 12.5%;	
+	text-align: center;
+	font-size: 16px;
+	line-height: 22px;
+}
+
+/*----------------------------------------------
+ side text
+---------------------------------------------------*/
+.mark-left,
+.mark-right{
+	position: absolute;
+	height: 800px;
+	width: 22px;
+	font-size: 0;
+	margin: auto 0;
+	top: 0;
+	bottom: 0;
+}
+
+.mark-left{
+	left: 0;
+}
+
+.mark-right{
+	right: 0;
+}
+
+.mark-left li,
+.mark-right li{
+	height: 12.5%;	
+	text-align: center;
+	vertical-align: middle;
+	font-size: 16px;
+	line-height: 100px;
+}
+
+
+/* top left side text*/
+.mark-top li,.mark-right li{
+	transform: rotate(180deg);
+}
+
+/*----------------------------------------------
+ board
+---------------------------------------------------*/
+.board-markup{
+	width: 800px;
+	height: 800px;
+	margin:auto;
+	border: 2px solid black;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+.block-holder{
+	width: 100%;
+	height: 100%;
+	font-size: 0;
+	
+}
+
+.block-holder li{
+	display: inline-block;
+	width: 100px;
+	height: 100px;
+	position: relative;
+}
+
+.block-holder li:nth-child(-2n+8), 
+.block-holder li:nth-child(8) ~ li:nth-child(-2n+15), 
+.block-holder li:nth-child(16) ~ li:nth-child(-2n+24), 
+.block-holder li:nth-child(24) ~ li:nth-child(-2n+31), 
+.block-holder li:nth-child(32) ~ li:nth-child(-2n+40), 
+.block-holder li:nth-child(40) ~ li:nth-child(-2n+47), 
+.block-holder li:nth-child(48) ~ li:nth-child(-2n+56), 
+.block-holder li:nth-child(56) ~ li:nth-child(-2n+63) {
+    background-color: #000;
+}
+
+.block-holder li:nth-child(-2n+8):after,
+.block-holder li:nth-child(8) ~ li:nth-child(-2n+15):after,
+.block-holder li:nth-child(16) ~ li:nth-child(-2n+24):after{
+	content: url('../img/bf.png');
+	position: absolute;
+	/* I know the size of the figures :) */
+	top: 17px;
+	left: 16px;
+}
+
+.block-holder li:nth-child(40) ~ li:nth-child(-2n+47):after, 
+.block-holder li:nth-child(48) ~ li:nth-child(-2n+56):after, 
+.block-holder li:nth-child(56) ~ li:nth-child(-2n+63):after{
+	content: url('../img/wf.png');
+	position: absolute;
+	/* I know the size of the figures :) */
+	top: 17px;
+	left: 16px;
+}
+
+
